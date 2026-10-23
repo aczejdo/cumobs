@@ -1,0 +1,12 @@
+# --- visualizer (the dashboard itself) ---
+# The visualizer needs only these two; it does NOT import torch or cumobs.
+bokeh>=3.4
+numpy>=1.24
+
+# --- training demo only (scripts/train_and_visualize.py) ---
+# torch is already a dependency of the cumobs package in this repo; listed here
+# for completeness if you run the visualizer outside the repo.
+# torch
+
+# --- tests ---
+pytest>=7

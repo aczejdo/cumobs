@@ -1,0 +1,38 @@
+[project]
+name = "cumobs"
+version = "0.3.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "torch",
+    "torchvision",
+    "circuitsvis>=1.43.3",
+    "dataclasses>=0.8",
+    "einops>=0.8.2",
+    "ipykernel>=7.2.0",
+    "numpy>=2.4.4",
+    "scipy>=1.17.1",
+    "seaborn>=0.13.2",
+    "tqdm>=4.67.3",
+    "transformer-lens>=3.0.0",
+    "wandb>=0.26.0",
+    "ipympl>=0.10.0",
+    "plotly>=6.8.0",
+    "nbformat>=4.2.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+filterwarnings = ["ignore::DeprecationWarning"]
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu130" }
+torchvision = { index = "pytorch-cu130" }
+#torchaudio = { index = "pytorch-cu130" }  # if you need it
+
+[[tool.uv.index]]
+name = "pytorch-cu130"
+url = "https://download.pytorch.org/whl/cu130"
+explicit = true
